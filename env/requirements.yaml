@@ -10,6 +10,9 @@ dependencies:
 - name: ps-jx-java-quickstart
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.1
+- name: ps-jx-preview-env
+  repository: http://jenkins-x-chartmuseum:8080
+  version: 0.0.1
 - name: ps-jx-test-import
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.6
