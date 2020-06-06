@@ -15,6 +15,7 @@ pipelineConfig:
                 - ps-jx-overidden-pipeline
                 - ps-jx-java-quickstart
               steps:
+                - sh: kubectl get deployments
                 - command: kubectl
                   name: Wait for service to start
                   args:
