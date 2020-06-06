@@ -12,6 +12,8 @@ pipelineConfig:
           - name: Run acceptance tests
             command: mvn
             args:
+              - "-f"
+              - acceptance-tests
               - clean
               - install
             image: "maven:latest"
