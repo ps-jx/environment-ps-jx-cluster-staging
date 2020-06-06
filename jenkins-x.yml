@@ -10,6 +10,7 @@ pipelineConfig:
       postBuild:
         steps:
           - name: Run acceptance tests
+            image: "maven:latest"
             command: mvn
             args:
               - -f
