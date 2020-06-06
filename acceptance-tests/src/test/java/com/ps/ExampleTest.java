@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
 
-public class Tests {
+public class ExampleTest {
 
   @Test
   public void should() {
@@ -17,7 +17,7 @@ public class Tests {
         .getForObject("http://ps-jx-overidden-pipeline-jx-staging.35.192.49.117.nip.io", String.class);
 
     // Then
-    assertThat(responseBody).isEqualTo("Hello there, Foo!");
+    assertThat(responseBody).isEqualTo("Hello there, Cheese!");
   }
 
 }
