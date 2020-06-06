@@ -12,11 +12,9 @@ pipelineConfig:
           - loop:
               variable: DEPLOYMENT
               values:
-                - ps-jx-overidden-pipeline
-                - ps-jx-java-quickstart
+                - jx-ps-jx-overidden-pipeline
+                - jx-ps-jx-java-quickstart
               steps:
-                - sh: kubectl get deployments
-                - sh: kubectl get deployments --namespace=jx-staging
                 - command: kubectl
                   name: Wait for service to start
                   args:
