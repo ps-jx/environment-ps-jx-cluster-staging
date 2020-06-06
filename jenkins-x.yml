@@ -14,3 +14,4 @@ pipelineConfig:
             args:
               - clean
               - install
+            image: "maven:latest"
