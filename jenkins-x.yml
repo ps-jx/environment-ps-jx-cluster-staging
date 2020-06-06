@@ -1,8 +1,16 @@
 env:
-- name: DEPLOY_NAMESPACE
-  value: jx-staging
-pipelineConfig:
-  env:
   - name: DEPLOY_NAMESPACE
     value: jx-staging
-  pipelines: {}
+pipelineConfig:
+  env:
+    - name: DEPLOY_NAMESPACE
+      value: jx-staging
+  pipelines:
+    release:
+      postBuild:
+        steps:
+          - name: Run acceptance tests
+            command: mvn
+            args:
+              - clean
+              - install
