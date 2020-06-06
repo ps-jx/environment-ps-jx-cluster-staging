@@ -9,6 +9,20 @@ pipelineConfig:
     release:
       postBuild:
         steps:
+          - loop:
+              variable: DEPLOYMENT
+              values:
+                - jx-ps-jx-overidden-pipeline
+                - jx-ps-jx-java-quickstart
+              steps:
+                - name: Wait for services to start
+                  command: kubectl
+                  args:
+                    - rollout
+                    - status
+                    - deployment
+                    - ${DEPLOYMENT}
+                    - --namespace=jx-staging
           - name: Run acceptance tests
             image: "maven:latest"
             command: mvn
