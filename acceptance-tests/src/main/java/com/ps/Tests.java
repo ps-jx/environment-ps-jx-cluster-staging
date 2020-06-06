@@ -16,7 +16,7 @@ public class Tests {
         .getForObject("ps-jx-overidden-pipeline-staging.35.192.49.117.nip.io/greeting", String.class);
 
     // Then
-    assertThat(responseBody).isEqualTo("Hello world");
+    assertThat(responseBody).isEqualTo("Hello foo");
   }
 
 }

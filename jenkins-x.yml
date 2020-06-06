@@ -7,16 +7,6 @@ pipelineConfig:
       value: jx-staging
   pipelines:
     release:
-      build:
-        steps:
-          - name: Helm-apply and wait to start
-            command: jx
-            args:
-              - step
-              - helm
-              - apply
-              - "--wait"
-        replace: true
       postBuild:
         steps:
           - name: Run acceptance tests
