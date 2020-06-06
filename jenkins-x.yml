@@ -16,6 +16,7 @@ pipelineConfig:
                 - ps-jx-java-quickstart
               steps:
                 - sh: kubectl get deployments
+                - sh: kubectl get deployments --namespace=jx-staging
                 - command: kubectl
                   name: Wait for service to start
                   args:
