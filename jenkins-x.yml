@@ -14,6 +14,5 @@ pipelineConfig:
             args:
               - "-f"
               - acceptance-tests
-              - clean
-              - install
+              - test
             image: "maven:latest"
