@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
+
 public class Tests {
 
   @Test
@@ -13,10 +14,10 @@ public class Tests {
 
     // When
     String responseBody = restTemplate
-        .getForObject("ps-jx-overidden-pipeline-staging.35.192.49.117.nip.io/greeting", String.class);
+        .getForObject("http://ps-jx-overidden-pipeline-jx-staging.35.192.49.117.nip.io", String.class);
 
     // Then
-    assertThat(responseBody).isEqualTo("Hello foo");
+    assertThat(responseBody).isEqualTo("Hello there, World!");
   }
 
 }
