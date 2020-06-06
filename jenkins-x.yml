@@ -10,7 +10,6 @@ pipelineConfig:
       postBuild:
         steps:
           - loop:
-              name: Wait for services to start
               variable: DEPLOYMENT
               values:
                 - ps-jx-overidden-pipeline
