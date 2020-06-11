@@ -10,9 +10,6 @@ dependencies:
 - name: my-go-project
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.1
-- name: ps-jx-java-quickstart
-  repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.1
 - name: ps-jx-overidden-pipeline
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.14
