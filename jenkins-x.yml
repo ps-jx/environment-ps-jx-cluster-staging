@@ -1,6 +1,6 @@
 env:
-  - name: DEPLOY_NAMESPACE
-    value: jx-staging
+- name: DEPLOY_NAMESPACE
+  value: jx-staging
 pipelineConfig:
   env:
   - name: DEPLOY_NAMESPACE
@@ -9,24 +9,24 @@ pipelineConfig:
     release:
       postBuild:
         steps:
-          - loop:
-              variable: DEPLOYMENT
-              values:
-                - jx-ps-jx-overidden-pipeline
-                - jx-ps-jx-java-quickstart
-              steps:
-                - name: Wait for services to start
-                  command: kubectl
-                  args:
-                    - rollout
-                    - status
-                    - deployment
-                    - ${DEPLOYMENT}
-                    - --namespace=jx-staging
-          - name: Run acceptance tests
-            image: "maven:latest"
-            command: mvn
-            args:
-              - -f
-              - acceptance-tests
-              - test
+        - loop:
+            steps:
+            - args:
+              - rollout
+              - status
+              - deployment
+              - ${DEPLOYMENT}
+              - --namespace=jx-staging
+              command: kubectl
+              name: Wait for services to start
+            values:
+            - jx-ps-jx-overidden-pipeline
+            - jx-ps-jx-java-quickstart
+            variable: DEPLOYMENT
+        - args:
+          - -f
+          - acceptance-tests
+          - test
+          command: mvn
+          image: maven:latest
+          name: Run acceptance tests
